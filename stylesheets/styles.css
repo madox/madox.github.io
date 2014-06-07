@@ -610,6 +610,7 @@ strong {
   margin: 0 auto;
   position: relative;
   padding: 0 20px;
+  /* z-index: 999; */
 }
 
 section img {
@@ -788,6 +789,7 @@ section {
   background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 1px 1px 15px 5px #000; 
   /* margin-top: 70px; */
+  /* z-index: 1000; */
 }
 section #title {
   border: 0;

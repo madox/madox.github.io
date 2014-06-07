@@ -35,7 +35,6 @@
                     
                     var LeafIcon = L.Icon.extend({
                             options: {
-                                    shadowUrl: 'images/gk_sh.png',
                                     iconSize:     [32, 32],
                                     shadowSize:   [32, 64],
                                     iconAnchor:   [16, 16],
@@ -43,17 +42,18 @@
                                     popupAnchor:  [0, -16]
                             }
                     });
+                    
+                    
+                    var pc = new LeafIcon({iconUrl: 'images/pc.png'}), 
+                        book = new LeafIcon({iconUrl: 'images/book.png'}),
+                        people = new LeafIcon({iconUrl: 'images/people.png'}),
+                        feather = new LeafIcon({iconUrl: 'images/feather.png'});
 
-                    var blackIcon = new LeafIcon({iconUrl: 'images/gk1.png'}), 
-                            redIcon = new LeafIcon({iconUrl: 'images/gk2.png'}),
-                            blueIcon = new LeafIcon({iconUrl: 'images/gk3.png'});
 
-
-            L.marker([54.37163, 18.62687], {icon: blueIcon}).bindPopup("IndoorKarting - Gdańsk").addTo(map);
-                    L.marker([54.38974, 18.63692], {icon: blackIcon}).bindPopup("PitStop - Gdańsk").addTo(map);
-                    L.marker([54.43288, 18.56380], {icon: redIcon}).bindPopup("KartCenter - Sopot").addTo(map);
-            L.marker([54.52558, 18.54288], {icon: blackIcon}).bindPopup("PitStop - Gdynia").addTo(map);
-            L.marker([54.78925, 18.42401], {icon: redIcon}).bindPopup("KartCenter - Władysławowo").addTo(map);
+            L.marker([54.395905, 18.573382], {icon: pc}).bindPopup("Wydział MFI").addTo(map);
+            L.marker([54.397120, 18.574477], {icon: book}).bindPopup("Biblioteka UG").addTo(map);
+            L.marker([54.399039, 18.573189], {icon: people}).bindPopup("Wydział WNS").addTo(map);
+            L.marker([54.397080, 18.572340], {icon: feather}).bindPopup("Wydział Filologiczny").addTo(map);
 
             </script>
             </div>

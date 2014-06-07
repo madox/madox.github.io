@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Zadania z Technik internetowych by madox</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    
+     <link rel="stylesheet" href="javascripts/leaflet/leaflet.css" />
+     <script src="javascripts/leaflet/leaflet.js"></script>
+     
+
+  </head>
+  <body>
+      
+<div id="map" style="height:280px;">
+    <script>
+                  (function() {
+   
+                    var map = L.map('map').setView([54.57, 18.61], 9);
+
+                    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+                    
+                    var LeafIcon = L.Icon.extend({
+                            options: {
+                                    shadowUrl: 'images/gk_sh.png',
+                                    iconSize:     [32, 32],
+                                    shadowSize:   [32, 64],
+                                    iconAnchor:   [16, 16],
+                                    shadowAnchor: [16, 48],
+                                    popupAnchor:  [0, -16]
+                            }
+                    });
+
+                    var blackIcon = new LeafIcon({iconUrl: 'images/gk1.png'}), 
+                            redIcon = new LeafIcon({iconUrl: 'images/gk2.png'}),
+                            blueIcon = new LeafIcon({iconUrl: 'images/gk3.png'});
+
+
+            L.marker([54.37163, 18.62687], {icon: blueIcon}).bindPopup("IndoorKarting - Gdańsk").addTo(map);
+                    L.marker([54.38974, 18.63692], {icon: blackIcon}).bindPopup("PitStop - Gdańsk").addTo(map);
+                    L.marker([54.43288, 18.56380], {icon: redIcon}).bindPopup("KartCenter - Sopot").addTo(map);
+            L.marker([54.52558, 18.54288], {icon: blackIcon}).bindPopup("PitStop - Gdynia").addTo(map);
+            L.marker([54.78925, 18.42401], {icon: redIcon}).bindPopup("KartCenter - Władysławowo").addTo(map);
+
+            })();
+            </script>
+            </div>
+
+          
+              
+
+  </body>
+</html>

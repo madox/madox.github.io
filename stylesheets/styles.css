@@ -542,6 +542,7 @@ body {
   background: -o-linear-gradient(#2a2a29, #1c1c1c);
   background: -ms-linear-gradient(#2a2a29, #1c1c1c);
   background: linear-gradient(#2a2a29, #1c1c1c);
+  background: #000 url('../images/bg.jpg') no-repeat center bottom 100%/100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -782,8 +783,10 @@ dt {
 
 section {
   max-width: 650px;
-  padding: 30px 0px 50px 0px;
+  padding: 30px 20px 50px 20px;
   margin: 20px 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 1px 15px 5px #000; 
   /* margin-top: 70px; */
 }
 section #title {
@@ -791,6 +794,7 @@ section #title {
   outline: none;
   margin: 0 0 50px 0;
   padding: 0 0 5px 0;
+  margin-top: 35px;
 }
 section #title h1 {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;

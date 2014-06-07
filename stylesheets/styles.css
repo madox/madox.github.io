@@ -849,3 +849,13 @@ section #title .credits.right {
     display: none;
   }
 }
+
+
+
+
+
+
+iframe {
+    width: 100%;
+    min-height: 300px;
+}

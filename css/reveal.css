@@ -539,6 +539,11 @@ body {
         top: 350px;
 }
 
+.reveal .slides>section>section {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
 
 /*********************************************
  * DEFAULT TRANSITION

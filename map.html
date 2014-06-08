@@ -24,39 +24,37 @@
   </head>
   <body>
       
-<div id="map" style="height:280px;">
+<div id="map" style="height:290px;">
     <script>
-               
-                    var map = L.map('map').setView([54.57, 18.61], 9);
+        var map = L.map('map').setView([54.3969997, 18.5739768], 15);
+         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-                    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    }).addTo(map);
-                    
-                    var LeafIcon = L.Icon.extend({
-                            options: {
-                                    iconSize:     [32, 32],
-                                    shadowSize:   [32, 64],
-                                    iconAnchor:   [16, 16],
-                                    shadowAnchor: [16, 48],
-                                    popupAnchor:  [0, -16]
-                            }
-                    });
-                    
-                    
-                    var pc = new LeafIcon({iconUrl: 'images/pc.png'}), 
-                        book = new LeafIcon({iconUrl: 'images/book.png'}),
-                        people = new LeafIcon({iconUrl: 'images/people.png'}),
-                        feather = new LeafIcon({iconUrl: 'images/feather.png'});
+        var LeafIcon = L.Icon.extend({
+                 options: {
+                         iconSize:     [32, 32],
+                         shadowSize:   [32, 64],
+                         iconAnchor:   [16, 16],
+                         shadowAnchor: [16, 48],
+                         popupAnchor:  [0, -16]
+                 }
+         });
+
+        var pc = new LeafIcon({iconUrl: 'images/pc.png'}), 
+                 book = new LeafIcon({iconUrl: 'images/book.png'}),
+                 people = new LeafIcon({iconUrl: 'images/people.png'}),
+                 law = new LeafIcon({iconUrl: 'images/law.gif'}),
+                 feather = new LeafIcon({iconUrl: 'images/feather.png'});
 
 
-            L.marker([54.395905, 18.573382], {icon: pc}).bindPopup("Wydział MFI").addTo(map);
-            L.marker([54.397120, 18.574477], {icon: book}).bindPopup("Biblioteka UG").addTo(map);
-            L.marker([54.399039, 18.573189], {icon: people}).bindPopup("Wydział WNS").addTo(map);
-            L.marker([54.397080, 18.572340], {icon: feather}).bindPopup("Wydział Filologiczny").addTo(map);
-
-            </script>
-            </div>
+         L.marker([54.395905, 18.573382], {icon: pc}).bindPopup("Wydział MFI").addTo(map);
+         L.marker([54.397120, 18.574477], {icon: book}).bindPopup("Biblioteka UG").addTo(map);
+         L.marker([54.399039, 18.573189], {icon: people}).bindPopup("Wydział WNS").addTo(map);
+         L.marker([54.397080, 18.572340], {icon: feather}).bindPopup("Wydział Filologiczny").addTo(map);
+         L.marker([54.398834, 18.571756], {icon: law}).bindPopup("Wydział Prawa").addTo(map);
+    </script>
+</div>
 
           
               

@@ -22,16 +22,22 @@
 
      <script>
          function zapisz() {
-                localStorage.setItem(
-                        document.getElementById('dane').value, ''
-                );
+            localStorage.dane = document.getElementById('dane').value;
+            $('#dane_ok').html( localStorage.dane );
+            $('#komunikat_ok').slideDown();
+            setTimeout(function(){$('#komunikat_ok').slideUp();}, 3000);
         }
 
          function odczytaj() {
+            /*
                 var zawartosc = '';
                 for(var klucz in localStorage)
-                        zawartosc += ( klucz + ' ' + localStorage.getItem( klucz ) + 'rn' );
-                alert ( zawartosc );
+                        zawartosc += ( localStorage.getItem( klucz ) );
+            */    
+           $('#dokladne_dane').html( localStorage.dane );
+           $('#pokaz_dane').fadeIn( localStorage.dane );
+           
+           setTimeout(function(){$('#pokaz_dane').fadeOut();}, 5000);
          }
      </script>
      
@@ -105,27 +111,41 @@
         <hr /><hr />
         
         
-        <div>
-                <label for="dane">Wprowadź dane: </label>
-                <input type="text" name="dane" id="dane" />
-                <button onClick="zapisz();">Zapisz</button>
-                <button onClick="odczytaj();">Odczytaj</button>
-           
+        <div style="min-height:130px;">
+            
+            <h2>LocalStorage</h2>
+            
+            <div style="height:10px;">
+                <div id="komunikat_ok" style="display:none; color:#0F0;">
+                    W LocalStorage zapisano dane: <span id="dane_ok"></span>
+                </div>
+            </div>
+            <br />
+            <label for="dane">Wprowadź dane: </label>
+            <input type="text" name="dane" id="dane" />
+            <button onClick="zapisz();">Zapisz</button>
+            <button onClick="odczytaj();">Odczytaj</button>
+            <br />
+            <div id="pokaz_dane" style="display:none; color:#00F; margin-top:10px;">
+                Dane to: 
+                <span id="dokladne_dane"></span>
+            </div>
         </div>
         
         <br />
         <hr />
         
         
+        
         <div>
-            <h2>Tabelka tak dla przykładu</h2>
+            <h2>Przykład jakiejś tabelki</h2>
             
-        <table border="0" cellspacing="0">
-            <colgroup width="103">
-            </colgroup>
-            <colgroup span="3" width="57">
-            </colgroup>
-            <tbody>
+            <table cellspacing="0">
+                <colgroup width="103">
+                </colgroup>
+                <colgroup span="3" width="57">
+                </colgroup>
+                <tbody>
                     <tr>
                             <td>
                                     <b>Numer indeksu</b></td>

@@ -20,6 +20,21 @@
      <link rel="stylesheet" href="javascripts/leaflet/leaflet.css" />
      <script src="javascripts/leaflet/leaflet.js"></script>
 
+     <script>
+         function zapisz() {
+                localStorage.setItem(
+                        document.getElementById('dane').value, ''
+                );
+        }
+
+         function odczytaj() {
+                var zawartosc = '';
+                for(var klucz in localStorage)
+                        zawartosc += ( klucz + ' ' + localStorage.getItem( klucz ) + 'rn' );
+                alert ( zawartosc );
+         }
+     </script>
+     
   </head>
   <body>
       <div id="header">
@@ -87,7 +102,19 @@
         </div>
         
         
-        <hr><hr>
+        <hr /><hr />
+        
+        
+        <div>
+                <label for="dane">Wprowadź dane: </label>
+                <input type="text" name="dane" id="dane" />
+                <button onClick="zapisz();">Zapisz</button>
+                <button onClick="odczytaj();">Odczytaj</button>
+           
+        </div>
+        
+        <br />
+        <hr />
         
         
         <div>
